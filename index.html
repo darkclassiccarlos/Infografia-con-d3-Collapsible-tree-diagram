@@ -5,11 +5,11 @@
 .node circle {
   fill: #fff;
   stroke: steelblue;
-  stroke-width: 3px;
+  stroke-width: 2px;
 }
 
 .node text {
-  font: 12px sans-serif;
+  font: 11px sans-serif;
 }
 
 .link {
@@ -28,16 +28,67 @@
 
 var treeData =
   {
-    "name":"https://n9.cl/zf7s0 // Complejidad Software",
+    "name":"Complejidad Software",
     "children": [
       { 
         "name": "La complejidad inherente del software",
         "children": [
           { "name": "Complejidad apartados", 
             "children":[              
-              {"name": "Las propiedades de los sistemas de software simples y complejos"},
-              {"name": "¿Por qué el software es complejo de forma innata?"},
-              {"name": "Las consecuencias de la complejidad ilimitada"}
+              {"name": "Las propiedades de los sistemas de software simples y complejos",
+               "children":[              
+                  {"name": "Simples", 
+                  "children":[ 
+                    {"name": "•	No son complejos"},
+                    {"name": "•	Suelen estar construidos y mantenidos por una sola persona (software artesanal)"},
+                    {"name": "•	Pueden construirse aplicaciones alternativas en un periodo razonable de tiempo"},
+                    {"name": "•	No necesitan grandes esfuerzos en análisis y diseño"},
+                    {"name": "•	No son nuestro objetivo de estudio"}
+                    ]
+                  },
+                  {"name": "Complejos",
+                  "children":[ 
+                    {"name": "• También se denominará software de dimensión industrial"},
+                    {"name": "•	Es muy difícil o imposible que	un desarrollador individual pueda comprender todas las sutilidades de su diseño"},
+                    {"name": "•	La complejidad es una propiedad esencial de estos sistemas, que puede dominarse, pero no eliminarse "},
+                    {"name": "•	Son el objetivo de nuestro estudio"}
+                    ]
+                  }
+                ]
+              },
+              {"name": "¿coplejidad de forma innata?",
+                "children":[ 
+                      {"name": "•	La complejidad del dominio del problema",
+                      "children":[ 
+                        {"name": "•	Gran cantidad de requisitos que compiten entre sí, incluso contradiciéndose"},
+                        {"name": "•	Desacoplamientos de impedancias entre usuarios del sistema y desarrolladores"},
+                        {"name": "•	Modificación de los requisitos con el paso del tiempo, pues los usuarios y desarrolladores comienzan a compenetrarse mejor"}
+                        ]
+                      },
+                      {"name": "•	La dificultad de gestionar el proceso de desarrollo",
+                      "children":[ 
+                        {"name": "•	Dirigir un equipo de desarrolladores"},
+                        {"name": "•	Manejar gran cantidad de código"}
+                        ]
+                      },
+                      {"name": "•	El detalle que se puede alcanzar a través del software",
+                      "children":[ 
+                        {"name": "•	Evitar el desarrollo de todo desde el nivel más inferior"},
+                        {"name": "•	Utilizar los estándares, al igual que en otras ingenierías"},
+                        {"name": "•	Verificar la fiabilidad de los estándares existentes en el mercado"}
+                        ]
+                      },
+                      {"name": "•	El problema de caracterizar el comportamiento de sistemas discretos",
+                      "children":[ 
+                        {"name": "•	La ejecución de un programa es una transición entre estados de un sistema discreto"},
+                        {"name": "•	Cada estado contiene las variables, su valor, direcciones en tiempo de ejecución, etc"},
+                        {"name": "•	Diseñar el sistema de forma que el comportamiento de una parte del sistema tenga mínimo impacto en otra parte del mismo"},
+                        {"name": "•	La transición entre estados debe ser determinista"},
+                        {"name": "•	Es imposible hacer una prueba exhaustiva"}
+                        ]
+                      }
+                      ]
+                    }
             ] 
           }
         ]
@@ -54,9 +105,9 @@ var treeData =
   };
 
 // Set the dimensions and margins of the diagram
-var margin = {top: 20, right: 90, bottom: 30, left: 90},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 30, right: 900, bottom: 40, left: 110},
+    width = 1400 - margin.left - margin.right,
+    height = 510 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
